@@ -1,0 +1,4 @@
+my-terraform/.terraform/
+my-terraform/.terraform.lock.hcl
+my-terraform/terraform.tfstate*
+
