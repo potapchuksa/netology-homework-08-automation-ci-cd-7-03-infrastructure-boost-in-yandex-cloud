@@ -32,9 +32,15 @@
 
 ![](img/img-01-02.png)
 
+Создал сервисный аккаунт terraform,
+
 ![](img/img-01-03.png)
 
+добавил ему роль editor в катологе netology-homework,
+
 ![](img/img-01-04.png)
+
+создал авторизованный ключ и он скачался на локальную машину в домашний каталог.
 
 ![](img/img-01-05.png)
 
@@ -46,9 +52,13 @@
 
 ![](img/img-01-09.png)
 
+Создал файл providers.tf,
+
 ![](img/img-01-10.png)
 
 ![](img/img-01-11.png)
+
+файл network.tf,
 
 ![](img/img-01-12.png)
 
@@ -58,11 +68,13 @@
 
 ![](img/img-01-15.png)
 
-![](img/img-01-17.png)
+файл variables.tf,
 
 ![](img/img-01-18.png)
 
 ![](img/img-01-19.png)
+
+файл vms.tf
 
 ![](img/img-01-20.png)
 
@@ -76,27 +88,45 @@
 
 ![](img/img-01-25.png)
 
+файл cloud-config.yml для создания пользователя user, добавления его в группу sudo, повышения его привелегий без запроса пароля и передачи на ВМ публичного ключа.
+
 ![](img/img-01-26.png)
 
 ![](img/img-01-27.png)
+
+Инициируем terraform, успешно.
 
 ![](img/img-01-28.png)
 
 ![](img/img-01-29.png)
 
+Применяем, при запросе подтверждаем.
+
+![](img/img-01-30-1.png)
+
+Проверяем результат через web-интерфейс Yandex cloud.
+
 ![](img/img-01-30.png)
 
 ![](img/img-01-31.png)
+
+Создаем конфигурационный файл Ansible.
 
 ![](img/img-01-32.png)
 
 ![](img/img-01-33.png)
 
+Создаем плейбук.
+
 ![](img/img-01-34.png)
 
 ![](img/img-01-35.png)
 
+Запускаем проверку созданных ВМ.
+
 ![](img/img-01-36.png)
+
+Файлы Terraform находятся [здесь](my-terraform/), Ansible - [здесь](my-ansible/)
 
 ---
 
