@@ -142,27 +142,27 @@
 
 ![](img/img-02-01.png)
 
-![](img/img-02-01.png)
+![](img/img-02-02.png)
 
 Добавил в vms.tf блок, который создаёт файл конфигурации для ssh
 
-![](img/img-02-01.png)
+![](img/img-02-03.png)
 
-![](img/img-02-01.png)
+![](img/img-02-04.png)
 
 После создания скопировал его в папку ~/.ssh/
 
-![](img/img-02-01.png)
+![](img/img-02-05.png)
 
 Изменил файл ansible.cfg
 
-![](img/img-02-01.png)
+![](img/img-02-06.png)
 
-![](img/img-02-01.png)
+![](img/img-02-07.png)
 
 Запустил плейбук
 
-![](img/img-02-01.png)
+![](img/img-02-08.png)
 
 Файлы Terraform находятся [здесь](my-terraform/), Ansible - [здесь](my-ansible/)
 
