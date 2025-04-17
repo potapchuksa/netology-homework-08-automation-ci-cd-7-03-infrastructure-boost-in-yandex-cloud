@@ -1,0 +1,16 @@
+Host 158.160.115.213  #адрес вашего бастиона
+  User user
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+
+Host 10.0.*
+  ProxyJump 158.160.115.213
+  User user
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null
+
+Host *.ru-central1.internal
+  ProxyJump 158.160.115.213
+  User user
+  StrictHostKeyChecking no
+  UserKnownHostsFile /dev/null

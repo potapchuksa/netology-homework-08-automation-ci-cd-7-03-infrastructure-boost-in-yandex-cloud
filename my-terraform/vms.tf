@@ -131,3 +131,26 @@ resource "local_file" "inventory" {
   XYZ
   filename = "../my-ansible/hosts.ini"
 }
+
+resource "local_file" "ssh-config" {
+  content  = <<-XYZ
+  Host ${yandex_compute_instance.bastion.network_interface.0.nat_ip_address}  #адрес вашего бастиона
+    User user
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+
+  Host 10.0.*
+    ProxyJump ${yandex_compute_instance.bastion.network_interface.0.nat_ip_address}
+    User user
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+
+  Host *.ru-central1.internal
+    ProxyJump ${yandex_compute_instance.bastion.network_interface.0.nat_ip_address}
+    User user
+    StrictHostKeyChecking no
+    UserKnownHostsFile /dev/null
+  XYZ
+  filename = "./config"
+}
+
