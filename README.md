@@ -184,9 +184,49 @@
 
 ### Решение
 
+В файле network.tf
+
+![](img/img-03-01.png)
+
+добавил еще одну подсеть
+
+![](img/img-03-02.png)
+
+и группу безопасности для СУБД
+
+![](img/img-03-03.png)
+
+в файле vms.tf
+
+![](img/img-03-04.png)
+
+добавил еще одну машину
+
+![](img/img-03-05.png)
+
+и обновил вывод в файл hosts.ini
+
+![](img/img-03-06.png)
+
+Применил, посмотрел через web-интерфейс
+
+![](img/img-03-07.png)
+
+![](img/img-03-08.png)
+
+Создал плейбук db-inst.yml (ни ansible.builtin.systemd, ни ansible.builtin.command, ни ansible.builtin.shell не работают, даже просто command выдал пустой список, остальные команды просто вызывали ошибку, надо будет обновить Ansible, и попробовать сделать по-нормальному, я понимаю, что shell, это не та команда, которую следует использовать, но как есть)
+
+![](img/img-03-09.png)
+
+![](img/img-03-10.png)
+
+![](img/img-03-11.png)
+
+Файлы Terraform находятся [здесь](my-terraform/), Ansible - [здесь](my-ansible/)
+
 --- 
 
-### Задание 3*
+### Задание 4*
 Изучите [инструкцию](https://cloud.yandex.ru/docs/tutorials/infrastructure-management/terraform-quickstart) yandex для terraform.
 Добейтесь работы паплайна с безопасной передачей токена от облака в terraform через переменные окружения. Для этого:
 

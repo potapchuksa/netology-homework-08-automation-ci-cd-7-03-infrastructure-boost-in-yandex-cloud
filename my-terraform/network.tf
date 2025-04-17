@@ -21,6 +21,15 @@ resource "yandex_vpc_subnet" "develop_b" {
   route_table_id = yandex_vpc_route_table.rt.id
 }
 
+#создаем подсеть zone D
+resource "yandex_vpc_subnet" "develop_d" {
+  name           = "develop-fops-ru-central1-d"
+  zone           = "ru-central1-d"
+  network_id     = yandex_vpc_network.develop.id
+  v4_cidr_blocks = ["10.0.3.0/24"]
+  route_table_id = yandex_vpc_route_table.rt.id
+}
+
 #создаем NAT для выхода в интернет
 resource "yandex_vpc_gateway" "nat_gateway" {
   name = "fops-gateway"
@@ -92,3 +101,15 @@ resource "yandex_vpc_security_group" "web_sg" {
     v4_cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+resource "yandex_vpc_security_group" "db_sg" {
+  name       = "db-sg"
+  network_id = yandex_vpc_network.develop.id
+  ingress {
+    description    = "Allow MySQL connections"
+    protocol       = "TCP"
+    port           = 3306
+    v4_cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+

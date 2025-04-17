@@ -1,0 +1,23 @@
+---
+- name: DB installation and services check 
+  hosts: db
+  gather_facts: false
+  vars:
+    ansible_ssh_user: user
+  become: true
+
+  tasks:
+    - name: Install MySQL
+      ansible.builtin.apt:
+        name: mysql-server
+        state: present
+        update_cache: yes
+
+    - name: Get running services
+      shell: "systemctl list-units --type=service --state=running --no-legend --no-pager | awk '{print $1}'"
+      register: running_services
+      changed_when: false
+
+    - name: Print running services
+      ansible.builtin.debug:
+        var: running_services.stdout_lines
